@@ -1,10 +1,17 @@
-import './App.css'
+import { CssBaseline, CssVarsProvider } from '@mui/joy'
+import Content from './components/content/Content'
+import Footer from './components/footer/Footer'
+import Header from './components/header/Header'
+import theme from './features/theme/extendTheme'
 
 function App() {
 	return (
-		<>
-			<h1>Hello world 2</h1>
-		</>
+		<CssVarsProvider theme={theme}>
+			<CssBaseline />
+			<Header />
+			<Content />
+			<Footer />
+		</CssVarsProvider>
 	)
 }
 
