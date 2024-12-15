@@ -4,6 +4,7 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined'
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined'
 import { Grid } from '@mui/joy'
+import { useGetUsersQuery } from '../../services/api'
 import {
 	BoxTitle,
 	SubtitleItem,
@@ -12,7 +13,27 @@ import {
 	СardItem,
 } from './ContentItem.styled'
 
+interface Country {
+	name: string
+}
+
 function ContentItem() {
+	const { data, error, isLoading } = useGetUsersQuery<Country[]>()
+
+	console.log(typeof data)
+
+	// if (isLoading) {
+	// 	return <div>Loading...</div> // Показываем сообщение о загрузке
+	// }
+
+	// if (error) {
+	// 	return <div>Error: {error.message}</div> // Показываем ошибку, если она произошла
+	// }
+
+	// if (!data || data.length === 0) {
+	// 	return <div>No users found</div> // Показываем, если нет данных
+	// }
+
 	return (
 		<>
 			<СardItem>
@@ -59,6 +80,13 @@ function ContentItem() {
 					</Grid>
 				</Grid>
 			</СardItem>
+			{/* <ul>
+				{data.map(user => (
+					<li>
+						<h3>{user.name}</h3>
+					</li>
+				))}
+			</ul> */}
 		</>
 	)
 }
