@@ -4,7 +4,6 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined'
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined'
 import { Grid } from '@mui/joy'
-import { useGetUsersQuery } from '../../services/api'
 import {
 	BoxTitle,
 	SubtitleItem,
@@ -18,9 +17,9 @@ interface Country {
 }
 
 function ContentItem() {
-	const { data, error, isLoading } = useGetUsersQuery<Country[]>()
+	// const { data, error, isLoading } = useGetUsersQuery<Country[]>()
 
-	console.log(typeof data)
+	// console.log(typeof data)
 
 	// if (isLoading) {
 	// 	return <div>Loading...</div> // Показываем сообщение о загрузке
@@ -43,7 +42,7 @@ function ContentItem() {
 					</TitleItem>
 				</BoxTitle>
 				<Grid container spacing={1} style={{ width: '100%', margin: '0' }}>
-					<Grid item xs={7} sx={{ padding: '0 0 0 15px' }}>
+					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem
 							level='h3'
 							startDecorator={<PeopleOutlineOutlinedIcon />}
@@ -51,31 +50,31 @@ function ContentItem() {
 							Population
 						</SubtitleItem>
 					</Grid>
-					<Grid item xs={5}>
+					<Grid xs={5}>
 						<ValueItem>16 655 799</ValueItem>
 					</Grid>
-					<Grid item xs={7} sx={{ padding: '0 0 0 15px' }}>
+					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<MapOutlinedIcon />}>
 							Region
 						</SubtitleItem>
 					</Grid>
-					<Grid item xs={5}>
+					<Grid xs={5}>
 						<ValueItem>Europe</ValueItem>
 					</Grid>
-					<Grid item xs={7} sx={{ padding: '0 0 0 15px' }}>
+					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<HomeWorkOutlinedIcon />}>
 							Capital
 						</SubtitleItem>
 					</Grid>
-					<Grid item xs={5}>
+					<Grid xs={5}>
 						<ValueItem>Amsterdam</ValueItem>
 					</Grid>
-					<Grid item xs={7} sx={{ padding: '0 0 0 15px' }}>
+					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<TranslateOutlinedIcon />}>
 							Language
 						</SubtitleItem>
 					</Grid>
-					<Grid item xs={5}>
+					<Grid xs={5}>
 						<ValueItem>Dutch</ValueItem>
 					</Grid>
 				</Grid>

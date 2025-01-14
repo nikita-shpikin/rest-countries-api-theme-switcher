@@ -39,8 +39,8 @@ function Content() {
 					}}
 				>
 					{[...Array(19)].map((_, index) => (
-						<Grid xs={14} sm={7} md={6.75} lg={4.75} xl={3.75}>
-							<ContentItem key={index} />
+						<Grid xs={14} sm={7} md={6.75} lg={4.75} xl={3.75} key={index}>
+							<ContentItem />
 						</Grid>
 					))}
 				</Grid>
