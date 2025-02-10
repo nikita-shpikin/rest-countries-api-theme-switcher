@@ -25,9 +25,11 @@ function ContentItem({ country }) {
 	}
 
 	const getFirstKeyValue = (obj: Record<string, any>) => {
-		const firstKey = Object.keys(obj)[0]
+		const keys = Object.keys(obj)
+		if (keys.length === 0) return 'Нет данных'
 
-		return obj[firstKey]
+		const firstValue = obj[keys[0]]
+		return keys.length > 1 ? `${firstValue}...` : firstValue
 	}
 
 	return (
