@@ -8,6 +8,9 @@ export const store = configureStore({
 		// Добавляем API редьюсер
 	},
 	middleware: getDefaultMiddleware =>
-		getDefaultMiddleware().concat(api.middleware),
+		getDefaultMiddleware({
+			serializableCheck: false,
+			// Отключите сериализуемое промежуточное ПО, инвариантное к состоянию.
+		}).concat(api.middleware),
 	// Добавляем middleware для кэширования запросов
 })

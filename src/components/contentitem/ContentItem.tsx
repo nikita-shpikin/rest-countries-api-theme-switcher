@@ -12,33 +12,15 @@ import {
 	СardItem,
 } from './ContentItem.styled'
 
-interface Country {
-	name: string
-}
-
-function ContentItem() {
-	// const { data, error, isLoading } = useGetUsersQuery<Country[]>()
-
-	// console.log(typeof data)
-
-	// if (isLoading) {
-	// 	return <div>Loading...</div> // Показываем сообщение о загрузке
-	// }
-
-	// if (error) {
-	// 	return <div>Error: {error.message}</div> // Показываем ошибку, если она произошла
-	// }
-
-	// if (!data || data.length === 0) {
-	// 	return <div>No users found</div> // Показываем, если нет данных
-	// }
+function ContentItem({ country }) {
+	console.log(country.capital)
 
 	return (
 		<>
 			<СardItem>
 				<BoxTitle>
 					<TitleItem level='h2' startDecorator={<FlagIcon />}>
-						Netherlands
+						{country.name.common}
 					</TitleItem>
 				</BoxTitle>
 				<Grid container spacing={1} style={{ width: '100%', margin: '0' }}>
@@ -51,7 +33,9 @@ function ContentItem() {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						<ValueItem>16 655 799</ValueItem>
+						<ValueItem>
+							{country?.population?.toLocaleString('ru-RU') || 'Нет данных'}
+						</ValueItem>
 					</Grid>
 					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<MapOutlinedIcon />}>
@@ -59,7 +43,7 @@ function ContentItem() {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						<ValueItem>Europe</ValueItem>
+						<ValueItem>{country.region}</ValueItem>
 					</Grid>
 					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<HomeWorkOutlinedIcon />}>
@@ -67,7 +51,7 @@ function ContentItem() {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						<ValueItem>Amsterdam</ValueItem>
+						<ValueItem>{country.capital}</ValueItem>
 					</Grid>
 					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<TranslateOutlinedIcon />}>
@@ -75,17 +59,10 @@ function ContentItem() {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						<ValueItem>Dutch</ValueItem>
+						<ValueItem>XXX</ValueItem>
 					</Grid>
 				</Grid>
 			</СardItem>
-			{/* <ul>
-				{data.map(user => (
-					<li>
-						<h3>{user.name}</h3>
-					</li>
-				))}
-			</ul> */}
 		</>
 	)
 }
