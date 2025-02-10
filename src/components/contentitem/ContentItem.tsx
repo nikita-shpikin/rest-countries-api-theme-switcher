@@ -13,7 +13,7 @@ import {
 } from './ContentItem.styled'
 
 function ContentItem({ country }) {
-	// console.log(country.capital)
+	// console.log(country.languages)
 
 	// Вывод списка столиц одна + многоточие
 	const formatArray = (arr: string[]): string => {
@@ -22,6 +22,12 @@ function ContentItem({ country }) {
 		const firstItem = arr[0].length > 13 ? arr[0].slice(0, 13) + '...' : arr[0]
 
 		return arr.length > 1 ? `${firstItem}...` : firstItem
+	}
+
+	const getFirstKeyValue = (obj: Record<string, any>) => {
+		const firstKey = Object.keys(obj)[0]
+
+		return obj[firstKey]
 	}
 
 	return (
@@ -60,7 +66,6 @@ function ContentItem({ country }) {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						{/* <ValueItem>{country.capital}</ValueItem> */}
 						<ValueItem>{formatArray(country.capital)}</ValueItem>
 					</Grid>
 					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
@@ -69,7 +74,7 @@ function ContentItem({ country }) {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						<ValueItem>XXX</ValueItem>
+						<ValueItem>{getFirstKeyValue(country.languages)}</ValueItem>
 					</Grid>
 				</Grid>
 			</СardItem>
