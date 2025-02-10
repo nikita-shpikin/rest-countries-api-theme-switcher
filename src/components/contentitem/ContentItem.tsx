@@ -13,7 +13,7 @@ import {
 } from './ContentItem.styled'
 
 function ContentItem({ country }) {
-	// console.log(country.languages)
+	console.log(country.name.common)
 
 	// Вывод списка столиц одна + многоточие
 	const formatArray = (arr: string[]): string => {
@@ -32,12 +32,16 @@ function ContentItem({ country }) {
 		return keys.length > 1 ? `${firstValue}...` : firstValue
 	}
 
+	const truncateString = (str: string, maxLength: number = 20) => {
+		return str.length > maxLength ? str.slice(0, maxLength) + '...' : str
+	}
+
 	return (
 		<>
 			<СardItem>
 				<BoxTitle>
 					<TitleItem level='h2' startDecorator={<FlagIcon />}>
-						{country.name.common}
+						{truncateString(country.name.common)}
 					</TitleItem>
 				</BoxTitle>
 				<Grid container spacing={1} style={{ width: '100%', margin: '0' }}>

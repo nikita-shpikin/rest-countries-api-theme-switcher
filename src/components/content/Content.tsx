@@ -57,7 +57,7 @@ function Content() {
 						gap: '30px',
 					}}
 				>
-					{data?.slice(0, 10).map((country, index) => (
+					{data?.slice(0, 16).map((country, index) => (
 						<Grid xs={14} sm={7} md={6.75} lg={4.75} xl={3.75} key={index}>
 							<ContentItem country={country} />
 						</Grid>

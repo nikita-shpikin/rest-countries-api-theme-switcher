@@ -29,10 +29,6 @@ export const TitleItem = styled(Typography)`
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 33px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: inline-flex;
 `
 
 export const SubtitleItem = styled(Typography)`
