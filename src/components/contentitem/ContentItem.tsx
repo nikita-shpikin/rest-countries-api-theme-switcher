@@ -13,7 +13,16 @@ import {
 } from './ContentItem.styled'
 
 function ContentItem({ country }) {
-	console.log(country.capital)
+	// console.log(country.capital)
+
+	// Вывод списка столиц одна + многоточие
+	const formatArray = (arr: string[]): string => {
+		if (!arr || arr.length === 0) return 'Нет данных'
+
+		const firstItem = arr[0].length > 13 ? arr[0].slice(0, 13) + '...' : arr[0]
+
+		return arr.length > 1 ? `${firstItem}...` : firstItem
+	}
 
 	return (
 		<>
@@ -51,7 +60,8 @@ function ContentItem({ country }) {
 						</SubtitleItem>
 					</Grid>
 					<Grid xs={5}>
-						<ValueItem>{country.capital}</ValueItem>
+						{/* <ValueItem>{country.capital}</ValueItem> */}
+						<ValueItem>{formatArray(country.capital)}</ValueItem>
 					</Grid>
 					<Grid xs={7} sx={{ padding: '0 0 0 15px' }}>
 						<SubtitleItem level='h3' startDecorator={<TranslateOutlinedIcon />}>
