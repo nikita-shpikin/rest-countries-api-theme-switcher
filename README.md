@@ -15,13 +15,13 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+	languageOptions: {
+		// other options...
+		parserOptions: {
+			project: ['./tsconfig.node.json', './tsconfig.app.json'],
+			tsconfigRootDir: import.meta.dirname,
+		},
+	},
 })
 ```
 
@@ -34,17 +34,21 @@ export default tseslint.config({
 import react from 'eslint-plugin-react'
 
 export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
+	// Set the react version
+	settings: { react: { version: '18.3' } },
+	plugins: {
+		// Add the react plugin
+		react,
+	},
+	rules: {
+		// other rules...
+		// Enable its recommended rules
+		...react.configs.recommended.rules,
+		...react.configs['jsx-runtime'].rules,
+	},
 })
 ```
+
+### Макет
+
+[Ссылка на макет](<https://www.figma.com/design/SHCFgRWncY3NvYJWf9cKSK/Countries-(Copy)?node-id=19-9551&node-type=frame&t=33mkoyQ6kzD2GbK7-0>)
