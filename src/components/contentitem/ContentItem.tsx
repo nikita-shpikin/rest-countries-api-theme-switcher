@@ -13,9 +13,6 @@ import {
 } from './ContentItem.styled'
 
 function ContentItem({ country }) {
-	console.log(country.name.common)
-
-	// Вывод списка столиц одна + многоточие
 	const formatArray = (arr: string[]): string => {
 		if (!arr || arr.length === 0) return 'Нет данных'
 
@@ -25,6 +22,7 @@ function ContentItem({ country }) {
 	}
 
 	const getFirstKeyValue = (obj: Record<string, any>) => {
+		if (!obj || typeof obj !== 'object') return null
 		const keys = Object.keys(obj)
 		if (keys.length === 0) return 'Нет данных'
 
